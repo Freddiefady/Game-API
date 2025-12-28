@@ -4,9 +4,9 @@ namespace GameStore.Dtos;
 
 public record UpdateGameDto(
     int Id,
-    [Required][MaxLength(50)] string Title,
-    [Required][MaxLength(20)]string? Description,
-    decimal? Price,
+    [Required][StringLength(50)] string Title,
+    [Required][StringLength(20)]string Description,
+    [Range(1, 100)] decimal? Price,
     DateOnly? DateRelease,
     int? GenreId
     );

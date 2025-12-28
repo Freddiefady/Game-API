@@ -200,3 +200,4 @@
 /Users/m/RiderProjects/GameStore/obj/Debug/net10.0/GameStore.pdb
 /Users/m/RiderProjects/GameStore/obj/Debug/net10.0/GameStore.genruntimeconfig.cache
 /Users/m/RiderProjects/GameStore/obj/Debug/net10.0/ref/GameStore.dll
+/Users/m/RiderProjects/GameStore/obj/Debug/net10.0/GameStore.sourcelink.json
