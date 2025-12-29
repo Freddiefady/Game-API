@@ -2,7 +2,7 @@ GET http://localhost:5135/games
 
 ###
 
-GET http://localhost:5135/games/1
+GET http://localhost:5135/games/2
 
 ###
 
@@ -10,21 +10,23 @@ POST http://localhost:5135/games
 Content-Type: application/json
 
 {
-  "title": "New Game",
-  "description": "Adventure",
+  "title": "NFS Heat",
+  "description": "Racing",
+  "GenreId": 3,
   "price": 49.99,
   "DateRelease": "2024-05-01"
 }
 
 ###
-PUT http://localhost:5135/games/1
+PUT http://localhost:5135/games/2
 Content-Type: application/json
 
 {
-  "title": "Updated Game Title",
-  "description": "Action",
-  "price": 59.99,
-  "DateRelease": "2023-03-15"
+  "title": "NFS Underground 2",
+  "description": "Racing",
+  "GenreId": 3,
+  "price": 49.99,
+  "DateRelease": "2024-05-01"
 }
 
 ###
