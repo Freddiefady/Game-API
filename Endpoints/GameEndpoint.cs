@@ -1,10 +1,15 @@
 using GameStore.Data;
 using GameStore.Dtos;
 using GameStore.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace GameStore.Endpoints;
 
+[ApiVersion("1.0", Deprecated = true)] // Deprecate version 1.0 > To report the deprecated versions as well.
+[ApiVersion("1.2")]
+[ApiVersion("2.0")]
+[Route("api/v{version:apiVersion}/[controller]")] // Pass version information in the URL segment.
 public static class GameEndpoint
 {
     const string GetGameEndpointName = "/games";
@@ -35,6 +40,7 @@ public static class GameEndpoint
         );
 
         // GET /game/{id}
+        //[MapToApiVersion("2.0")] // Map to a specific version of an action method
         group.MapGet("/{id}", async (int id, GameStoreContext dbContext) =>
         {
             var game = await dbContext.Games.FindAsync(id);
