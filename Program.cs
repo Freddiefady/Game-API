@@ -1,5 +1,6 @@
 using GameStore.Data;
 using GameStore.Endpoints;
+using GameStore.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,8 @@ app.MapGamesEndpoints();
 app.MapGenresEndpoints();
 
 app.MigrateDb();
+
+app.UseMiddleware<ApiKeyMiddleware>();
 
 app.Run();
 // run db migrations and seed data
