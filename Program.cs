@@ -35,6 +35,24 @@ app.UseWhen(config => config.Request.Path.StartsWithSegments("/api/game"),
 
     });
 
+app.Map("/api/GetDateTime", async dtApi =>
+{
+    await dtApi.Response.WriteAsJsonAsync(new
+    {
+        CurrentDateTime = DateTime.Now
+    });
+});
+
+app.MapWhen(context => context.Request.Path.StartsWithSegments("/api/DateTime"),
+    app1 => app1.Run(async context =>
+    {
+        await context.Response.WriteAsJsonAsync(new
+        {
+            CurrentDateTime = DateTime.Now,
+            message = "This endpoint provides the current date and time."
+        });
+    }));
+
 app.Run();
 // run db migrations and seed data
 // first use namespaces in program.cs
